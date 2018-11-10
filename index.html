@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>JavaScriptQuiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Javascript.js"></script>
+</head>
+<body>
+    <!--Quiz Home Page-->
+    <div id="startButton" onclick="StartQuiz()">
+        <input type="button" value="Start" >
+    </div>
+
+    <!--Question One-->
+    <div id="questionOne">
+        <div><h1>Howdy</h1></div>
+        <div><input type="radio" value="1" name="answerOne"> Howdy Partner</div>
+        <div> <input type="radio" value="2" name="answerOne"> Howdy Do </div>
+        <div><input type="radio" value="3" name="answerOne"> hi </div>
+
+
+        <div><input id="submitOne" type="submit" value="Next" Onclick="SaveOne()"></div>
+    </div>
+
+    <!--Question Two-->
+    <div id="questionTwo">
+        <div><h1>Top 5 Favorite Numbers</h1></div>
+        <div><input type="number" id="faveNumbers"></div>
+        <div><input type="submit" value="next" onclick="SaveTwo()"></div>
+    </div>
+
+    <!--Question Three-->
+    <div id="questionThree">
+        <div><h1>Favorite Word</h1></div>
+        <div><input type="text" id="faveWord"></div>
+        <div><input type="submit" value="next" onclick="SaveThree()"></div>
+    </div>
+    
+</body>
