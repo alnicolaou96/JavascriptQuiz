@@ -96,21 +96,47 @@ function SaveThree(){
     document.getElementById("questionFour").style.display="flex";
 }
 
+
 //////////////////////////////////////////////////////////////////////////////////////
 
 
 //Question Four
 //Checkboxes for user's favorite animals
-var favoriteAnimals= new Array(6);   //where the values of selected checkboxes will be saved
+var favoriteAnimals= new Array(0,0,0,0,0,0);    //where the values of selected checkboxes will be saved
 function SaveFour(){
     var checkbox=document.getElementsByName("Animal");
 
+    //takes the values of the checked boxes and adds it to the favorite animals array
     for (var i=0; i<checkbox.length;i++){
         if (checkbox[i].checked){
-            favoriteAnimals[i]=checkbox.value;
-            console.log(checkbox.value);
+            favoriteAnimals[i]=checkbox[i].value;
         }
     }
-    alert(favoriteAnimals);
- 
+
+    //stops this question and starts the next
+    document.getElementById("questionFour").style.display="none";
+    document.getElementById("questionFive").style.display="flex";
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+//Question Five
+//User's Birth Date and Favorite Date
+var favoriteDate=new Date();
+var birthDate=new Date;
+function SaveFive(){
+    //short cuts
+    var birth= document.getElementById("birth");
+    var fave=document.getElementById("fave");
+
+    //saves dates
+    birth.value=birthDate;
+    fave.value=favoriteDate;
+    console.log(favoriteDate);
+
+    //stops this question and starts the next
+    document.getElementById("questionFive").style.display="none";
+    document.getElementById("results").style.display="flex";
 }

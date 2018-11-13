@@ -35,3 +35,8 @@ body{
     display:none;
     flex-direction: column;
 }
+
+#questionFive{
+    display:none;
+    flex-direction: column;
+}
