@@ -4,11 +4,15 @@
     <link rel="stylesheet" href="style.css">
     <script src="Javascript.js"></script>
 </head>
+
 <body>
+
     <!--Quiz Home Page-->
     <div id="startButton" onclick="StartQuiz()">
         <input type="button" value="Start" >
     </div>
+
+    <!----------------------------------------------------------------------->
 
     <!--Question One-->
     <div id="questionOne">
@@ -17,22 +21,44 @@
         <div> <input type="radio" value="2" name="answerOne"> Howdy Do </div>
         <div><input type="radio" value="3" name="answerOne"> hi </div>
 
-
         <div><input id="submitOne" type="submit" value="Next" Onclick="SaveOne()"></div>
     </div>
+
+    <!----------------------------------------------------------------------->
 
     <!--Question Two-->
     <div id="questionTwo">
         <div><h1>Top 5 Favorite Numbers</h1></div>
         <div><input type="number" id="faveNumbers"></div>
+
         <div><input type="submit" value="next" onclick="SaveTwo()"></div>
     </div>
+
+    <!----------------------------------------------------------------------->
 
     <!--Question Three-->
     <div id="questionThree">
         <div><h1>Favorite Word</h1></div>
         <div><input type="text" id="faveWord"></div>
+
         <div><input type="submit" value="next" onclick="SaveThree()"></div>
     </div>
+
+    <!----------------------------------------------------------------------->
+
+    <!--Question Four-->
+    <div id="questionFour">
+        <div><h1>Favorite Animals</h1></div>
+        <div><input type="checkbox" name="Animal" value=1> Dog </div>
+        <div><input type="checkbox" name="Animal" value=2> Cat </div>
+        <div><input type="checkbox" name="Animal" value=3> Bird </div>
+        <div><input type="checkbox" name="Animal" value=4> Mouse </div>
+        <div><input type="checkbox" name="Animal" value=5> Horse </div>
+        <div><input type="checkbox" name="Animal" value=6> Fish </div>
+
+        <div><input type="submit" value="next" onclick="SaveFour()"></div>
+    </div>
+
+    <!----------------------------------------------------------------------->
     
 </body>

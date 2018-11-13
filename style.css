@@ -30,3 +30,8 @@ body{
     display:none;
     flex-direction: column;
 }
+
+#questionFour{
+    display:none;
+    flex-direction: column;
+}
