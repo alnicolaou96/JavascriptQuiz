@@ -86,14 +86,25 @@ function SaveTwo(){
 //Question Three
 //User's inputed favorite word
 var favoriteWord="";    //variable that saves user's favorite word
+var inputedWord=false;  //checks if user inputed characters
 function SaveThree(){
-    //saves user's favorite word
+    //shortcut
     var x= document.getElementById("faveWord");
-    favoriteWord=x.value;
+
+    //tests if the input is not empty 
+    if((x.value!=="")&&(!isNaN(x.value))){
+        inputedWord=true;   //allows user to move to the next question
+        favoriteWord=x.value;   //saves word
+    }
+    else{
+        alert("Come on man, be cool. Just input a word");
+    }
 
     //stops this question and starts the next
+    if(inputedWord===true){
     document.getElementById("questionThree").style.display="none";
     document.getElementById("questionFour").style.display="flex";
+    }
 }
 
 
@@ -123,20 +134,22 @@ function SaveFour(){
 
 
 //Question Five
-//User's Birth Date and Favorite Date
-var favoriteDate=new Date();
-var birthDate=new Date;
-function SaveFive(){
-    //short cuts
-    var birth= document.getElementById("birth");
-    var fave=document.getElementById("fave");
+//User's favorite color
 
-    //saves dates
-    birth.value=birthDate;
-    fave.value=favoriteDate;
-    console.log(favoriteDate);
+var color;
+function SaveFive(){
+    //saves color
+    var faveColor=document.getElementById("color").value;
+    document.getElementById("body").style.backgroundColor=faveColor;
+    color=faveColor;
 
     //stops this question and starts the next
     document.getElementById("questionFive").style.display="none";
     document.getElementById("results").style.display="flex";
 }
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+//Results
