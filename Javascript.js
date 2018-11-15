@@ -153,3 +153,13 @@ function SaveFive(){
 
 
 //Results
+var largestNum=0;
+for(var i=0;i<favoriteNumbers.length;i++){
+    if(largestNum<favoriteNumbers[i]){
+        largestNum=favoriteNumbers[i];
+    }
+}
+document.getElementById("resultText").innerHTML=favoriteWord;
+for(var i=0; i<largestNum;i++){
+document.getElementById("results").appendChild(div).innerHTML=favoriteWord;
+}
