@@ -60,8 +60,16 @@ function SaveTwo(){
         }
     }
 
+    //alerts if number is less than 0 or greater than 100
+    if(fave.value>99){
+        alert("hey man, your number has to be less than 100. What are you doing with your life")
+    }
+    if(fave.value<1){
+        alert("less than 1? come on man, dont aim so low, shoot for the stars. I believe in you <3")
+    }
+
     //saves number input into array
-    if((fave.value!=="")&&(noRepeatedNumbers===true)){
+    if((fave.value!=="")&&(noRepeatedNumbers===true)&&(fave.value<100)&&(fave.value>0)){
     favoriteNumbers[userInput]=fave.value;
     userInput++;
     }
@@ -92,7 +100,7 @@ function SaveThree(){
     var x= document.getElementById("faveWord");
 
     //tests if the input is not empty 
-    if((x.value!=="")&&(!isNaN(x.value))){
+    if((x.value!=="")&&(isNaN(x.value))){
         inputedWord=true;   //allows user to move to the next question
         favoriteWord=x.value;   //saves word
     }
@@ -143,6 +151,21 @@ function SaveFive(){
     document.getElementById("body").style.backgroundColor=faveColor;
     color=faveColor;
 
+    //finds the largest number from favorite numbers array
+    var largestNum=0;
+    for(var i=0;i<favoriteNumbers.length;i++){
+        if(largestNum<favoriteNumbers[i]){
+            largestNum=favoriteNumbers[i];
+        }
+    }
+
+    //generates divs with the favorite word/generates the number of times based on the highest number of the favorite numbers array
+    for(var i=0; i<largestNum;i++){
+        var div=document.createElement('div');
+        div.textContent=favoriteWord;
+        document.getElementById("results").appendChild(div);
+    }
+
     //stops this question and starts the next
     document.getElementById("questionFive").style.display="none";
     document.getElementById("results").style.display="flex";
@@ -153,13 +176,3 @@ function SaveFive(){
 
 
 //Results
-var largestNum=0;
-for(var i=0;i<favoriteNumbers.length;i++){
-    if(largestNum<favoriteNumbers[i]){
-        largestNum=favoriteNumbers[i];
-    }
-}
-document.getElementById("resultText").innerHTML=favoriteWord;
-for(var i=0; i<largestNum;i++){
-document.getElementById("results").appendChild(div).innerHTML=favoriteWord;
-}
